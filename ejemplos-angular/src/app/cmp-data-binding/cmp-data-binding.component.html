@@ -1,0 +1,22 @@
+<h2>Data Binding</h2>
+
+<h3>String Interpolation</h3>
+<p>Me llamo {{nombre}}</p>
+<p>Me llamo {{getNombre()}}</p>
+<p>Hola {{nombre2 ? nombre2 : 'Mundo'}}</p>
+
+<h3>Property Binding</h3>
+<img [src]="logoAngular" alt="Logo de {{tituloLogo}}" width="150">
+<input type="text" [placeholder]="nombre">
+<input type="text" [placeholder]="getNombre()">
+
+<h3>Event Binding</h3>
+<button (click)="mostrarMensaje('Un mensaje')">Muestra un mensaje</button>
+<a (click)="verHref($event)" href="http://angular.io">Ver la dirección del enlace</a>
+<button (click)="resetNombre()">Resetear nombre</button>
+
+<h3>Two Way Data Binding</h3>
+<input type="text" [(ngModel)]="nombre">
+
+<h3>Simula tu propio ngModel</h3>
+<input type="text" [value]="nombre" (input)="cambiarNombre($event)">
