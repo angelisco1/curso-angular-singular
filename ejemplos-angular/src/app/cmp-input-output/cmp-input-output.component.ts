@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cmp-input-output.component.css']
 })
 export class CmpInputOutputComponent implements OnInit {
+  nombre: string = ''
+  apellidos: string = ''
 
   constructor() { }
 
@@ -14,5 +16,16 @@ export class CmpInputOutputComponent implements OnInit {
 
   mostrarString(event: any): void {
     console.log(event)
+  }
+
+  cambiarProps(event: any): void {
+    switch(event.campo) {
+      case 'nombre':
+        this.nombre = event.valor
+        break
+      case 'apellidos':
+        this.apellidos = event.valor
+        break
+    }
   }
 }

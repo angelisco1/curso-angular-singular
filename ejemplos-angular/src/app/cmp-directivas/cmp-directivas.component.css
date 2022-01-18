@@ -1,0 +1,23 @@
+.letraAzul {
+  color: blue;
+}
+
+.tachado {
+  text-decoration: line-through;
+}
+
+.par {
+  color: blue;
+}
+
+.impar {
+  color: red;
+}
+
+.primero {
+  border-top: 1px solid black;
+}
+
+.ultimo {
+  border-bottom: 1px solid black;
+}

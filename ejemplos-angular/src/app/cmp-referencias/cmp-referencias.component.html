@@ -1,0 +1,7 @@
+<h2>Variables de plantilla (referencias)</h2>
+
+<video src="assets/video.mp4" width="150" #video1></video>
+
+<button (click)="reproducir(video1)">Play</button>
+<button (click)="pausar(video1)">Pause</button>
+<input type="range" name="volumen" id="volumen" min="0" max="100" (input)="cambiarVolumen(video1, $event)">

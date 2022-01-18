@@ -1,0 +1,18 @@
+<h2>Pipes</h2>
+
+<div>
+  <h3>{{producto.titulo}}</h3>
+  <p>Descripción: {{producto.descripcion}}</p>
+  <p>Precio: {{producto.precio}}</p>
+  <p>Fecha lanzamiento: {{producto.fechaLanzamiento}}</p>
+</div>
+
+<div>
+  <h3>{{producto.titulo | titlecase}}</h3>
+  <p>Descripción: {{producto.descripcion | slice:0:150}}...</p>
+  <p>Precio: {{producto.precio | currency:'EUR'}}</p>
+  <p>Fecha lanzamiento: {{producto.fechaLanzamiento | date:'dd/MM/yyyy'}}</p>
+</div>
+
+<p>Precio: {{producto.precio | doble:400}}</p>
+<p>Precio: {{producto.precio | doble}}</p>

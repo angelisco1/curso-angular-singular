@@ -10,6 +10,13 @@ import { SugusComponent } from './cmp-input-output/sugus/sugus.component';
 import { MiBotonComponent } from './cmp-input-output/mi-boton/mi-boton.component';
 import { FormCvComponent } from './cmp-input-output/form-cv/form-cv.component';
 import { PreviewCvComponent } from './cmp-input-output/preview-cv/preview-cv.component';
+import { CmpReferenciasComponent } from './cmp-referencias/cmp-referencias.component';
+import { CmpDirectivasComponent } from './cmp-directivas/cmp-directivas.component';
+import { MarcarDirective } from './cmp-directivas/marcar.directive';
+import { CmpPipesComponent } from './cmp-pipes/cmp-pipes.component';
+import { DoblePipe } from './cmp-pipes/doble.pipe';
+import { OcultarPalabrasPipe } from './cmp-pipes/ocultar-palabras.pipe';
+import { FiltroPipe } from './cmp-pipes/filtro.pipe';
 
 @NgModule({
   declarations: [
@@ -20,7 +27,14 @@ import { PreviewCvComponent } from './cmp-input-output/preview-cv/preview-cv.com
     SugusComponent,
     MiBotonComponent,
     FormCvComponent,
-    PreviewCvComponent
+    PreviewCvComponent,
+    CmpReferenciasComponent,
+    CmpDirectivasComponent,
+    MarcarDirective,
+    CmpPipesComponent,
+    DoblePipe,
+    OcultarPalabrasPipe,
+    FiltroPipe
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,60 @@
+<h2>Directivas</h2>
+
+<h3>De atributo</h3>
+
+<p [ngStyle]="{color: colorLetra}">Este texto aparece con la letra del color elegido</p>
+<input type="color" [(ngModel)]="colorLetra">
+
+<p [ngClass]="{tachado: tareaHecha, letraAzul: true}" (click)="toggleHecha()">Este texto aparece tachado y con la letra azul</p>
+
+<p appMarcar>Este párrafo aparece marcado de amarillo</p>
+<!-- <p appMarcar="green" color1="blue">Este párrafo aparece marcado de verde</p> -->
+<p appMarcar="green">Este párrafo aparece marcado de verde</p>
+<p appMarcar="red">Este párrafo aparece marcado de rojo</p>
+<p [appMarcar]="colorSeleccionado">Este párrafo aparece marcado del color seleccionado</p>
+
+<h3>Estructurales</h3>
+
+<!-- <button *ngIf="darkMode" (click)="toggleDarkMode(false)">Activar Light Mode ☀️</button>
+<button *ngIf="!darkMode" (click)="toggleDarkMode(true)">Activar Dark Mode 🌜</button> -->
+
+<!-- <button *ngIf="darkMode; else btnDarkMode" (click)="toggleDarkMode(false)">Activar Light Mode ☀️</button>
+
+<ng-template #btnDarkMode>
+  <button (click)="toggleDarkMode(true)">Activar Dark Mode 🌜</button>
+</ng-template> -->
+
+<div *ngIf="darkMode; then btnLightMode else btnDarkMode"></div>
+
+<ng-template #btnLightMode>
+  <button (click)="toggleDarkMode(false)">Activar Light Mode ☀️</button>
+</ng-template>
+
+<ng-template #btnDarkMode>
+  <button (click)="toggleDarkMode(true)">Activar Dark Mode 🌜</button>
+</ng-template>
+
+<ul>
+  <li
+    *ngFor="let color of colores; let pos = index; let esElPrimero = first; let esElUltimo = last; let par = even; let impar = odd; let totalElementos = count"
+    [ngClass]="{par: par, impar: impar, primero: esElPrimero, ultimo: esElUltimo}"
+  >
+    {{pos + 1}}/{{totalElementos}} - {{color}}
+  </li>
+</ul>
+
+<select [(ngModel)]="colorSeleccionado">
+  <option *ngFor="let color of colores; let esUltimo = last" [value]="color">{{color}}</option>
+  <option value="white">white</option>
+</select>
+
+<div [ngSwitch]="colorSeleccionado">
+  <ng-container *ngFor="let color of colores">
+    <p *ngSwitchCase="color">Se ha elegido el {{color}}</p>
+  </ng-container>
+  <!-- <p *ngSwitchCase="'blue'">Se ha elegido el blue</p>
+  <p *ngSwitchCase="'red'">Se ha elegido el red</p>
+  <p *ngSwitchCase="'orange'">Se ha elegido el orange</p>
+  <p *ngSwitchCase="'black'">Se ha elegido el black</p> -->
+  <p *ngSwitchDefault>Se ha elegido otro color distinto</p>
+</div>

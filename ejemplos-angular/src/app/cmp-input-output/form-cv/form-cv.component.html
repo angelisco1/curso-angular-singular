@@ -2,10 +2,10 @@
 
 <div>
   <label for="nombre">Nombre</label>
-  <input type="text" id="nombre">
+  <input type="text" id="nombre" (input)="datoCambiado($event)">
 </div>
 
 <div>
   <label for="apellidos">Apellidos</label>
-  <input type="text" id="apellidos">
+  <input type="text" id="apellidos" (input)="datoCambiado($event)">
 </div>

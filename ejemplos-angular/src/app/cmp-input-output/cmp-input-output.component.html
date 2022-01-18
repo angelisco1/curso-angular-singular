@@ -1,10 +1,10 @@
 <h2>Decoradores @Input y @Output</h2>
 
-<app-form-cv></app-form-cv>
-<app-preview-cv></app-preview-cv>
+<app-form-cv (cambios)="cambiarProps($event)"></app-form-cv>
 
-
-
+<app-preview-cv
+  [nombre]="nombre"
+  [apellidos]="apellidos"></app-preview-cv>
 
 
 <app-sugus color="blue" sabor="piña"></app-sugus>
