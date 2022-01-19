@@ -1,0 +1,25 @@
+<h3>De plantilla</h3>
+
+<form (ngSubmit)="guardar(formulario)" #formulario="ngForm">
+  <div>
+    <label for="username">Username</label>
+    <input type="text" id="username" name="username" [ngModel]="datosForm.username" required minlength="5" #username="ngModel">
+
+    <app-error *ngIf="username.invalid && username.dirty" [errores]="username.errors"></app-error>
+
+  </div>
+  <div>
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" [ngModel]="datosForm.password" required #password="ngModel">
+
+    <app-error *ngIf="password.invalid && password.dirty" [errores]="password.errors"></app-error>
+  </div>
+  <div>
+    <label for="confirmarPassword">Confirmar password</label>
+    <input type="password" id="confirmarPassword" name="confirmarPassword" [ngModel]="datosForm.confirmarPassword" required #cPw="ngModel">
+
+    <app-error *ngIf="cPw.invalid && cPw.dirty" [errores]="cPw.errors"></app-error>
+  </div>
+  <button type="submit" [disabled]="formulario.invalid">Guardar</button>
+  <button type="submit">Guardar</button>
+</form>

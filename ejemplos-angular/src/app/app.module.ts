@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { MiPrimerComponenteComponent } from './mi-primer-componente/mi-primer-componente.component';
 import { CmpDataBindingComponent } from './cmp-data-binding/cmp-data-binding.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CmpInputOutputComponent } from './cmp-input-output/cmp-input-output.component';
 import { SugusComponent } from './cmp-input-output/sugus/sugus.component';
 import { MiBotonComponent } from './cmp-input-output/mi-boton/mi-boton.component';
@@ -17,6 +17,10 @@ import { CmpPipesComponent } from './cmp-pipes/cmp-pipes.component';
 import { DoblePipe } from './cmp-pipes/doble.pipe';
 import { OcultarPalabrasPipe } from './cmp-pipes/ocultar-palabras.pipe';
 import { FiltroPipe } from './cmp-pipes/filtro.pipe';
+import { CmpFormulariosComponent } from './cmp-formularios/cmp-formularios.component';
+import { ErrorComponent } from './cmp-formularios/error/error.component';
+import { ReactivosComponent } from './cmp-formularios/reactivos/reactivos.component';
+import { PlantillaComponent } from './cmp-formularios/plantilla/plantilla.component';
 
 @NgModule({
   declarations: [
@@ -34,11 +38,16 @@ import { FiltroPipe } from './cmp-pipes/filtro.pipe';
     CmpPipesComponent,
     DoblePipe,
     OcultarPalabrasPipe,
-    FiltroPipe
+    FiltroPipe,
+    CmpFormulariosComponent,
+    ErrorComponent,
+    ReactivosComponent,
+    PlantillaComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

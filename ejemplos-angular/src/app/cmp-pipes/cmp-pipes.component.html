@@ -1,5 +1,7 @@
 <h2>Pipes</h2>
 
+<p>Mensaje: {{mensaje | async}}</p>
+
 <div>
   <h3>{{producto.titulo}}</h3>
   <p>Descripción: {{producto.descripcion}}</p>
@@ -10,9 +12,25 @@
 <div>
   <h3>{{producto.titulo | titlecase}}</h3>
   <p>Descripción: {{producto.descripcion | slice:0:150}}...</p>
-  <p>Precio: {{producto.precio | currency:'EUR'}}</p>
+  <p>Precio: {{producto.precio | doble:1200 | currency:'EUR'}}</p>
   <p>Fecha lanzamiento: {{producto.fechaLanzamiento | date:'dd/MM/yyyy'}}</p>
 </div>
 
-<p>Precio: {{producto.precio | doble:400}}</p>
-<p>Precio: {{producto.precio | doble}}</p>
+<pre>{{producto}}</pre>
+<pre>{{producto | json}}</pre>
+
+<input type="text" [(ngModel)]="texto">
+
+<p>{{texto | ocultarPalabras:['no', 'soy']}}</p>
+
+<input type="text" (change)="addProducto($event)">
+
+<ul>
+  <li *ngFor="let producto of listaProductos">{{producto}}</li>
+</ul>
+
+<input type="text" (input)="filtrarLista($event)">
+
+<ul>
+  <li *ngFor="let producto of listaProductos | filtro:textoFiltro">{{producto}}</li>
+</ul>

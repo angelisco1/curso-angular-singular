@@ -5,8 +5,14 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class OcultarPalabrasPipe implements PipeTransform {
 
-  transform(value: unknown, ...args: unknown[]): unknown {
-    return null;
+  transform(value: string, palabras: Array<string>): string {
+    palabras.forEach(palabra => {
+      const regexp = new RegExp(palabra, 'gi')
+      value = value.replace(regexp, '*'.repeat(palabra.length))
+      // value = value.replaceAll(palabra, '*'.repeat(palabra.length))
+    })
+
+    return value;
   }
 
 }
