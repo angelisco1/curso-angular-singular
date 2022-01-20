@@ -1,0 +1,6 @@
+<h2>Observables</h2>
+
+<button (click)="toggleMostrarCmp()">Mostrar/Eliminar el componente</button>
+<app-unsubscribe *ngIf="mostrarCmp"></app-unsubscribe>
+
+<app-suscripciones plataforma="AngularFlix" [precio]="5.95"></app-suscripciones>

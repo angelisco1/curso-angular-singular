@@ -1,0 +1,9 @@
+<div>
+  <h3>{{plataforma}}</h3>
+  <p>Precio: {{precio | currency:'EUR'}}</p>
+  <p>Próximo pago: {{(fechaProxPago | date:'hh:mm:ss') || '--:--:--'}}</p>
+  <button *ngIf="activa; else btnSubscribe" (click)="cancelarSuscripcion()">Cancelar suscripción</button>
+  <ng-template #btnSubscribe>
+    <button (click)="activarSuscripcion()">Suscribirme</button>
+  </ng-template>
+</div>

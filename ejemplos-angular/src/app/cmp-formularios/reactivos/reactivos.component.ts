@@ -25,8 +25,8 @@ export class ReactivosComponent implements OnInit {
   constructor() {
     this.formulario = new FormGroup({
       username: new FormControl('', [Validators.required, Validators.minLength(5)]),
-      password: new FormControl('', [Validators.required, CustomValidators.passwordSegura]),
-      confirmarPassword: new FormControl('', Validators.required),
+      password: new FormControl('', [Validators.required, CustomValidators.passwordSegura, CustomValidators.passwordMasUsadas(['1234', 'qwerty', 'password'])]),
+      confirmarPassword: new FormControl('', [Validators.required, CustomValidators.passwordIguales]),
     })
   }
 

@@ -34,6 +34,12 @@ export class ErrorComponent implements OnChanges {
             this.mensajesError.push('Te falta un ., una , o una _')
           }
           break
+        case 'passwordMasUsadas':
+          this.mensajesError.push('La contraseña que has puesto no es segura')
+          break
+        case 'passwordIguales':
+          this.mensajesError.push('El valor introducido en este campo es distinto al del campo anterior')
+          break
       }
     }
   }

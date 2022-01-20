@@ -21,6 +21,14 @@ import { CmpFormulariosComponent } from './cmp-formularios/cmp-formularios.compo
 import { ErrorComponent } from './cmp-formularios/error/error.component';
 import { ReactivosComponent } from './cmp-formularios/reactivos/reactivos.component';
 import { PlantillaComponent } from './cmp-formularios/plantilla/plantilla.component';
+import { CmpServiciosComponent } from './cmp-servicios/cmp-servicios.component';
+import { CmpAComponent } from './cmp-servicios/cmp-a/cmp-a.component';
+import { CmpBComponent } from './cmp-servicios/cmp-b/cmp-b.component';
+import { CmpObservablesComponent } from './cmp-observables/cmp-observables.component';
+import { UnsubscribeComponent } from './cmp-observables/unsubscribe/unsubscribe.component';
+import { SuscripcionesComponent } from './cmp-observables/suscripciones/suscripciones.component';
+import { CmpHttpComponent } from './cmp-http/cmp-http.component';
+import { TareaComponent } from './cmp-http/tarea/tarea.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +50,15 @@ import { PlantillaComponent } from './cmp-formularios/plantilla/plantilla.compon
     CmpFormulariosComponent,
     ErrorComponent,
     ReactivosComponent,
-    PlantillaComponent
+    PlantillaComponent,
+    CmpServiciosComponent,
+    CmpAComponent,
+    CmpBComponent,
+    CmpObservablesComponent,
+    UnsubscribeComponent,
+    SuscripcionesComponent,
+    CmpHttpComponent,
+    TareaComponent
   ],
   imports: [
     BrowserModule,

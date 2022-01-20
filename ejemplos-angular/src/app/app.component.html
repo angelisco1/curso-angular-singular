@@ -1,5 +1,10 @@
 <h1>Curso de Angular</h1>
 
+<button *ngIf="isLoggedIn; else btnLogin" (click)="logout()">Logout</button>
+<ng-template #btnLogin>
+  <button (click)="login()">Login</button>
+</ng-template>
+
 <!-- <app-mi-primer-componente></app-mi-primer-componente> -->
 
 <!-- <app-cmp-data-binding></app-cmp-data-binding> -->
@@ -7,4 +12,7 @@
 <!-- <app-cmp-referencias></app-cmp-referencias> -->
 <!-- <app-cmp-directivas></app-cmp-directivas> -->
 <!-- <app-cmp-pipes></app-cmp-pipes> -->
-<app-cmp-formularios></app-cmp-formularios>
+<!-- <app-cmp-formularios></app-cmp-formularios> -->
+<!-- <app-cmp-servicios></app-cmp-servicios> -->
+<!-- <app-cmp-observables></app-cmp-observables> -->
+<app-cmp-http></app-cmp-http>
