@@ -1,1 +1,5 @@
-<p>tarea works!</p>
+<div>
+  <span>{{tarea.titulo}} ({{tarea.completada ? 'Completa' : 'No completa'}})</span>
+  <button type="button" (click)="eliminar()">Eliminar</button>
+  <button type="button" (click)="completar()">Completar</button>
+</div>

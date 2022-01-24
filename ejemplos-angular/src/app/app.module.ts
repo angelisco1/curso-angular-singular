@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 
 import { AppComponent } from './app.component';
 import { MiPrimerComponenteComponent } from './mi-primer-componente/mi-primer-componente.component';
@@ -29,6 +30,14 @@ import { UnsubscribeComponent } from './cmp-observables/unsubscribe/unsubscribe.
 import { SuscripcionesComponent } from './cmp-observables/suscripciones/suscripciones.component';
 import { CmpHttpComponent } from './cmp-http/cmp-http.component';
 import { TareaComponent } from './cmp-http/tarea/tarea.component';
+import { AuthInterceptor } from './cmp-http/auth.interceptor';
+import { CmpRoutingComponent } from './cmp-routing/cmp-routing.component';
+import { Error404Component } from './cmp-routing/error404/error404.component';
+import { UsuariosComponent } from './cmp-routing/usuarios/usuarios.component';
+import { NuevoUsuarioComponent } from './cmp-routing/nuevo-usuario/nuevo-usuario.component';
+import { InfoUsuarioComponent } from './cmp-routing/info-usuario/info-usuario.component';
+import { RoutingModule } from './cmp-routing/app.routes';
+import { EditarUsuarioComponent } from './cmp-routing/editar-usuario/editar-usuario.component';
 
 @NgModule({
   declarations: [
@@ -58,14 +67,24 @@ import { TareaComponent } from './cmp-http/tarea/tarea.component';
     UnsubscribeComponent,
     SuscripcionesComponent,
     CmpHttpComponent,
-    TareaComponent
+    TareaComponent,
+    CmpRoutingComponent,
+    Error404Component,
+    UsuariosComponent,
+    NuevoUsuarioComponent,
+    InfoUsuarioComponent,
+    EditarUsuarioComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
+    RoutingModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

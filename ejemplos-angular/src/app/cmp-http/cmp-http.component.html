@@ -1,1 +1,13 @@
 <h2>Peticiones HTTP</h2>
+
+<div>
+  <input type="text" #tituloTarea>
+  <button type="button" (click)="guardar(tituloTarea.value)">Añadir tarea</button>
+</div>
+
+
+<app-tarea
+  *ngFor="let t of listaTareas"
+  [tarea]="t"
+  (tareaCompletada)="completarTarea($event)"
+  (tareaEliminada)="eliminarTarea($event)"></app-tarea>

@@ -1,0 +1,10 @@
+<h2>Routing</h2>
+
+<a routerLink="/usuarios">Usuarios</a>
+<a [routerLink]="['/nuevo-usuario']">Nuevo usuario</a>
+<hr>
+
+<router-outlet></router-outlet>
+
+<!-- /usuarios/3/editar
+['/usuarios', usuario.id, 'editar'] -->
